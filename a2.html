@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        *{margin: 0;padding: 0;
+        text-align: center;}
+        section{position: relative;}
+        section img{width: 500px;}
+        article{width: 100px; height: 150px;
+        display: inline-block;
+        margin: 30px;position: relative;}
+        article img{position: relative;width: 70px;
+        height: 30px;display: none;
+        bottom: 800px;right: 70px;}
+        #B_bt,#N_bt{position: relative;
+        bottom: 930px;width: 70px;}
+        #N_bt{right: 140px;}
+        #B_bt{right: 30px;}
+        #p{position: relative; width: 150px; bottom:388px; }
+        #t{position: relative; width: 150px; bottom:388px;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <img id="aaa"src=img\listbag.jpg alt="">
+    </section>
+    <div class="">
+      <img id="B_bt"src="img/M-.png" alt="">
+    <article class="">
+    <img id="img01" src="img/1.png" alt="">
+  <img id="img02" src="img/2.png" alt="">
+  <img id="img03" src="img/3.png" alt="">
+  <img id="img04" src="img/4.png" alt="">
+  <img id="img05" src="img/5.png" alt="">
+    </article>
+    <img id="N_bt" src="img/p+.png" alt="">
+  </div>
+    <a href="a1.html" >  <img id="p"src="img/prev.png"onclick="changImg()"></a>
+    <a href="a3.html" ><img id="t"src="img/talk.png"onclick="changImg()"></a>
+  <script>
+    var img01 = document.getElementById('img01');
+    var img02 = document.getElementById('img02');
+    var img03 = document.getElementById('img03');
+    var img04 = document.getElementById('img04');
+    var img05 = document.getElementById('img05');
+
+    var L_bt = document.getElementById('B_bt');
+    var N_bt = document.getElementById('N_bt');
+
+        var  count = 1;
+        imgview();
+
+        N_bt.addEventListener('click',function(){
+          console.log("count= ",count);
+          if(count<5){
+            count++;;
+            imgview();
+
+          }
+        })
+
+        B_bt.addEventListener('click',function(){
+          console.log('count ',count);
+          if(count>1){
+            count--;
+            imgview();
+          }
+        })
+        function imgview(){
+      img01.style.display  = "none";
+      img02.style.display = "none";
+      img03.style.display = "none";
+      img04.style.display = "none";
+      img05.style.display = "none";
+
+
+      if(count==1){
+        img01.style.display = "block";
+      }else if(count==2){
+        img02.style.display = "block";
+      }else if(count==3){
+        img03.style.display = "block";
+      }else if(count==4){
+        img04.style.display = "block";
+      }else if(count==5){
+        img05.style.display = "block";
+      }
+    }
+  </script>
+
+  </body>
+</html>
